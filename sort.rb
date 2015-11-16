@@ -15,7 +15,7 @@ def insertion_sort(array, element_count)
   for i in (1..(element_count - 1))
     key = array[i]
     j = i - 1
-    while j >= 0 && array[j] > key
+    while j >= 0 && array[j] > key # descend through previous elements as long as they are larger
       array[j + 1] = array[j]
       j -= 1
     end
