@@ -50,3 +50,45 @@ def merge(array, low, middle, high)
   end
   return array
 end
+
+def quicksort(array, low, high)
+  return array if low >= high
+  middle = partition(array, low, high)
+  quicksort(array, low, middle - 1)
+  quicksort(array, middle + 1, high)
+end
+
+def partition(array, low, high)
+  q = low
+  for u in (low..(high - 1))
+    if array[u] <= array[high]
+      array[q], array[u] = array[u], array[q]
+      q += 1
+    end
+  end
+  array[q], array[high] = array[high], array[q]
+  return q
+end
+
+def randomized_quicksort(array, low, high)
+  return array if low >= high
+  random_index = rand(low..high)
+  array[high], array[random_index] = array[random_index], array[high]
+  middle = partition(array, low, high)
+  quicksort(array, low, middle - 1)
+  quicksort(array, middle + 1, high)
+end
+
+def median_randomized_quicksort(array, low, high)
+  return array if low >= high
+  randoms = []
+  3.times do
+    random = rand(low..high)
+    randoms << random
+  end
+  random_index = randoms.reduce(:+).to_f / randoms.size
+  array[high], array[random_index] = array[random_index], array[high]
+  middle = partition(array, low, high)
+  quicksort(array, low, middle - 1)
+  quicksort(array, middle + 1, high)
+end
