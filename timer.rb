@@ -19,4 +19,7 @@ Benchmark.bm(30) do |x|
 
   names = IO.read('names.txt').split(',')
   x.report("Median Randomized Quicksort:") { median_randomized_quicksort(names, 0, (names.length - 1)) }
+
+  names = IO.read('names.txt').split(',')
+  x.report("Hybrid Sort:") { hybrid_sort(names, 0, (names.length - 1)) }
 end

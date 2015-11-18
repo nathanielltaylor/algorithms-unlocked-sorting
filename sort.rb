@@ -92,3 +92,14 @@ def median_randomized_quicksort(array, low, high)
   quicksort(array, low, middle - 1)
   quicksort(array, middle + 1, high)
 end
+
+def hybrid_sort(array, low, high)
+  return array if low >= high
+  middle = partition(array, low, high)
+  if (high + 1) > 20
+    quicksort(array, low, middle - 1)
+    quicksort(array, middle + 1, high)
+  else
+    insertion_sort(array, high + 1)
+  end
+end
