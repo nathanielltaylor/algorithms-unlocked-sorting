@@ -11,3 +11,6 @@ Implementing the various sort algorithms described in Thomas H. Cormen's 'Algori
 - The non-deterministic quicksort variants do not perform significantly better on this dataset; presumably it has too few elements for the time investment in choosing a random number (or three and averaging them) to pay off
 - A hybrid sort, in which quicksort is called recursively until the subarrays are small enough, at which point an insertion sort is performed instead, does not yield a significant performance boost over the simple deterministic quicksort either (with a dataset this size)
 - Increasing the size of the dataset up to 1200 from 300 did not change any of the above
+
+##### Noncomparison Sorting
+A noncomparison counting sort procedure is also included.

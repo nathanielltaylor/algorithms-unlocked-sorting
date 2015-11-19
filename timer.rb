@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative 'sort'
+require_relative 'comparison'
 
 Benchmark.bm(30) do |x|
   names = IO.read('names.txt').split(',')
